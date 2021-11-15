@@ -9,8 +9,7 @@ ostatni_element([X], B) :-
 ostatni_element([_|A], B) :-
     ostatni_element(A, B).
 
-prefiks([], _) :-
-    true.
+prefiks([], _).
 prefiks([X|A], [X|B]) :-
     prefiks(A, B).
 
