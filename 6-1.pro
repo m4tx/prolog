@@ -19,7 +19,7 @@ rev([X | XL], Y, Z) :- rev(XL, [X|Y], Z).
 
 przekatna(M, P) :- przekatna(M, P, 0, []).
 przekatna([X|M], P, N, A) :-
-	N1 is N + 1,
+    N1 is N + 1,
     wiersz(X, W, N),
     przekatna(M, P, N1, [W|A]).
 przekatna([], A, _, B) :- rev(A, B).
