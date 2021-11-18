@@ -28,3 +28,15 @@ wiersz([_|L], P, N) :-
     N1 is N - 1,
     wiersz(L, P, N1).
     
+splaszcz(L, P) :-
+    splaszcz(L, [], P).
+splaszcz([], A, P) :-
+    reverse(A, A1),
+    P = A1.
+splaszcz([X|L], A, P) :-
+    is_list(X),
+    append(X, L, L1),
+    splaszcz(L1, A, P).
+splaszcz([X|L], A, P) :-
+    not(is_list(X)),
+    splaszcz(L, [X|A], P).
