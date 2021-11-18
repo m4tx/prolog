@@ -31,8 +31,7 @@ wiersz([_|L], P, N) :-
 splaszcz(L, P) :-
     splaszcz(L, [], P).
 splaszcz([], A, P) :-
-    reverse(A, A1),
-    P = A1.
+    reverse(A, P).
 splaszcz([X|L], A, P) :-
     is_list(X),
     append(X, L, L1),
